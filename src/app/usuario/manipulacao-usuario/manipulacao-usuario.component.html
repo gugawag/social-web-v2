@@ -1,0 +1,30 @@
+<h1>{{titulo}}</h1>
+
+<div fxLayout="row" fxLayoutAlign="center">
+  <mat-card class="cartao-cadastro-usuario" fxFlex="20">
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="usuarioDeManipulacao.nome" placeholder="Digite o nome do usuário"
+             aria-label="Nome do usuário">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Idade</mat-label>
+      <input matInput [(ngModel)]="usuarioDeManipulacao.idade" placeholder="Digite a idade do usuário"
+             aria-label="Idade do usuário">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>CPF</mat-label>
+      <input matInput [(ngModel)]="usuarioDeManipulacao.cpf" placeholder="Digite o cpf do usuário"
+             aria-label="CPF do usuário">
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button class="botao-cadastro" mat-raised-button mat-icon-button color="primary" (click)="manipularUsuario()">
+        <mat-icon *ngIf="operacaoCadastro">add</mat-icon>
+        <mat-icon *ngIf="!operacaoCadastro">create</mat-icon>
+      </button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>
