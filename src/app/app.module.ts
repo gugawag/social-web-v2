@@ -15,6 +15,7 @@ import {UsuarioModule} from './usuario/usuario.module';
 import {LayoutModule} from './layout/layout.module';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {FirestoreModule} from './firestore/firestore.module';
+import {UsuarioService} from './shared/servicos/usuario.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {FirestoreModule} from './firestore/firestore.module';
     MatSnackBarModule,
     FirestoreModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Usuario} from '../../shared/modelo/usuario';
 import {UsuarioService} from '../../shared/servicos/usuario.service';
-import {UsuarioFirestoreService} from '../../shared/servicos/usuario-firestore.service';
 
 @Component({
   selector: 'app-listagem-usuario',
@@ -11,7 +10,7 @@ import {UsuarioFirestoreService} from '../../shared/servicos/usuario-firestore.s
 export class ListagemUsuarioComponent implements OnInit {
 
   usuarios: Usuario[];
-  constructor(private usuarioService: UsuarioFirestoreService) {
+  constructor(private usuarioService: UsuarioService) {
     this.usuarios = new Array<Usuario>();
   }
 
@@ -22,7 +21,7 @@ export class ListagemUsuarioComponent implements OnInit {
   }
 
   removerUsuario(usuario: Usuario) {
-    this.usuarioService.remover(usuario.id || '').subscribe(
+    this.usuarioService.remover(usuario.id || 0).subscribe(
       removido => {
         const indxUsuario = this.usuarios.findIndex(u => u.id === usuario.id);
 
